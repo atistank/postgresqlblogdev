@@ -13,15 +13,27 @@ const db = new sequelize({
 // ham kiem tra test ket noi
 db.authenticate()
   .then( function(){ console.log( 'ket noi thanh cong' )})
-  .catch(err => console.log( err.message )
-
-
+  .catch(err => console.log( err.message) )
 // dinh nghia table
-const User = db.define('User',{
-
+const User = db.define('User',
+{
     username: sequelize.STRING,
-    password: sequelize.STRING
+    password: sequelize.STRING,
+    quyenhan: sequelize.INTEGER,
+    trangthai: sequelize.INTEGER,
+    like: sequelize.INTEGER,
+    userid: {
+      type: sequelize.INTEGER,
+      primaryKey: true,
+      unique: true,
+      allowNull: false,
+      autoIncrement: true
+    }
+  }, 
+  {
+    freezeTableName: true
 
 })
+db.sync({force: true})
 
-module.exports = User
+module.exports = db.models
