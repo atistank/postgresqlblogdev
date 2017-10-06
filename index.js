@@ -24,7 +24,7 @@ app.post('/user',(req,res)=> {
 
 // them user
 app.post('/add_user',(req,res)=> {
-let {userid,username,password,quyenhan,trangthai,like} = req.body
+let {username,password,quyenhan,trangthai,like} = req.body
 models.User.create({
      username,
      password,
