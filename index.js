@@ -15,7 +15,7 @@ app.get('/',(req,res)=> res.send('wellcome web cua devblog'))
 
 
 // read
-app.post('/user',(req,res)=> {
+app.get('/user',(req,res)=> {
     models.User.findAll()
     .then(users => res.json({ketqua: 1, data: users}))
     .catch(() => res.json({ketqua: 0}))
