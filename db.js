@@ -18,6 +18,7 @@ db.authenticate()
 const User = db.define('User',
 {
     username: sequelize.STRING,
+    email: sequelize.STRING,
     password: sequelize.STRING,
     quyenhan: sequelize.INTEGER,
     trangthai: sequelize.INTEGER,
