@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 // cau hinh root
 
 
-app.get('/',(req,res)=> res.send('wellcome web cua tui'))
+app.get('/',(req,res)=> res.send('wellcome web cua devblog'))
 
 
 
@@ -30,7 +30,7 @@ models.User.create({
      password,
      quyenhan,
      trangthai,
-     like  
+          
 })
 .then(() => res.json({ketqua: 1}))
 .catch(() => res.json({ketqua: 0}))
