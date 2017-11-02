@@ -24,13 +24,16 @@ app.get('/user',(req,res)=> {
 
 // them user
 app.post('/add_user',(req,res)=> {
-let {username,email,password,quyenhan,trangthai,like} = req.body
+let {username,email,password,avatar,cover,quyenhan,trangthai,like} = req.body
 models.User.create({
      username,
      email,
      password,
+     avatar,
+     cover,
      quyenhan,
      trangthai,
+     like
           
 })
 .then(() => res.json({ketqua: 1}))
@@ -42,11 +45,13 @@ models.User.create({
 
 // cap nhat user
 app.post('/update_user',(req,res)=>{
-let {userid,username,email,password,quyenhan,trangthai,like} = req.body
+let {userid,username,email,password,avatar,cover,quyenhan,trangthai,like} = req.body
    models.User.update({
             username,
             email,
             password,
+            avatar,
+            cover,
             quyenhan,
             trangthai,
             like
