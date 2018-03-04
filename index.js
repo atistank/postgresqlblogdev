@@ -7,17 +7,30 @@ app.use(bodyParser.urlencoded({extended: true}))
 // cau hinh root
 
 
-app.get('/',(req,res)=> res.send('wellcome web cua devblog'))
+app.get('/',(req,res)=> res.send('wellcome web cua finally Project'))
 
 
 
-
+// //read one
+// app.get('/login', (req, res) => {
+//     let {email,password} = req.query
+//     models.User.findById(email)
+//       .then(users => res.json({ketqua: 1, data: users}))
+//       .catch(() => res.json({ketqua: 0}))
+//   })
 
 
 // read
 app.get('/user',(req,res)=> {
     models.User.findAll()
     .then(users => res.json({ketqua: 1, data: users}))
+    .catch(() => res.json({ketqua: 0}))
+
+})
+
+app.get('/dataAll',(req,res)=> {
+    models.dataAll.findAll
+    .then(dataAll => res.json({ketqua: 1, data: dataAll}))
     .catch(() => res.json({ketqua: 0}))
 
 })

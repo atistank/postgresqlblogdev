@@ -2,14 +2,28 @@ const sequelize = require('sequelize')
 
 const db = new sequelize({
 
-    database: "d8r2m4irt7a3pu",
-    username: "okwloigjfhaygu",
-    password: "c85aa771148bb518ca0e16c33bb5781aded07194e5cf0d91db919f77b6a20699",
-    host: "ec2-54-225-237-64.compute-1.amazonaws.com",
+    database: "d5rvn4isku8tlu",
+    username: "adyssuakmijxbm",
+    password: "2200dd5691094abe8dc7faed9b50c4713756e8a57a93036433c401e0a61f62a0",
+    host: "ec2-107-21-236-219.compute-1.amazonaws.com",
     port: 5432,
     dialect: 'postgres'
 })
 
+
+const dataAll = Conn.define('Khoaluan5', {
+  race_id: 
+  {
+   type: Sequelize.STRING,
+   allowNull: false,
+   primaryKey: true
+   },
+  race_name:
+  {
+   type: Sequelize.STRING,
+   allowNull: false
+  }
+});
 // ham kiem tra test ket noi
 db.authenticate()
   .then( function(){ console.log( 'ket noi thanh cong' )})
